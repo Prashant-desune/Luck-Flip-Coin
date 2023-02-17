@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      background: linear-gradient(90deg, #ffa9a9, #64a1e0, #ffa9a9, #64a1e0);
+  background-size: 400% 400%;
+  -webkit-animation: gradientBG 7s ease infinite forwards;
+  animation: gradientBG 7s ease infinite forwards;
+}
+
+.container{
+    background: #fff;
+    width: 400px;
+    /* padding: 50px; */
+    padding: 50px;
+    position:absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    box-shadow: 15px 30px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 18px;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+    overflow: hidden;
+    transition: 0.6s ease-out;
+}
+
+.stats{
+    text-align: right;
+    color: #101020;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+.coin{
+    height: 150px;
+    width: 150px;
+    position: relative;
+    margin: 50px auto;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.tails{
+    transform: rotateX(180deg);
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.coin img{
+    width: 145px;
+}
+
+.heads, .tails{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+button{
+    width: 120px;
+    padding: 10px 0;
+    border: 2.5px solid #424ae0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#flip-button{
+    background: #424ae0;
+    color: #fff;
+}
+
+#flip-button:disabled{
+    background-color: #e1e0ee;
+    color: #101020;
+    border-color: #e1e0ee;
+}
+
+#reset-button{
+    background: #fff;
+    color: #424ae0;
+}
+
+.clock__logo {
+    width: max-content;
+    justify-self: center;
+    margin-bottom: var(--mb-2-5);
+    font-size: var(--smaller-font-size);
+    font-weight: var(--font-medium);
+    color: var(--text-color-light);
+    transition: .3s;
+  }
+  
+  .clock__logo:hover {
+    color: var(--first-color);
+  }
+
+@keyframes spin-tails{
+    0%{
+        transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(1980deg);
+    }
+}
+
+@keyframes spin-heads{
+    0%{
+        transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(2160deg);
+    }
+}
+
+
+@-webkit-keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
